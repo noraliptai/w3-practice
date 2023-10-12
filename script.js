@@ -1,73 +1,29 @@
-/* function getFirstChars (str, n) {
-    let result = ""
+const animals = ["kutya", "cica", "nyuszi", "papagáj"]
 
-    result = str.substring(0, n)
+const numbers = [10, 20, 30, 40, 50]
 
-    return result
-}
+animals.forEach((animal) => console.log(animal))
 
-console.log(getFirstChars("Codecool", 5)) */
+// forEach - nem returnolja az új arrayt, csak ha létrehozunk egyet új változóként és belepusholjuk
 
-/* const obj = {
-    firstName: "John",
-    lastName: "Doe",
-    getfullName: function() {
-        return obj.firstName + obj.lastName
-    }
-}
+/* const newNumbers = []
 
-console.log(obj.getfullName()) */
+numbers.forEach(function (number, index, array) { // 3 paramétert kaphat
+    let newNumber = number * 10
+    console.log(newNumber, index, array)
+    newNumbers.push(newNumber)
+}) */
 
-let text = "Lorem ipsum dolor et"
+// map - olyan mint a forEach, csak létrehoz egy új arrayt
 
-let textArray = text.split(" ")
+const mapResult = numbers.map((number) => number * 10)
 
-// console.log(textArray)
+console.log(mapResult)
 
-let newText = textArray.join(" ")
+// filter - kiszűr bizonyos elemeket új arraybe
 
-// console.log(newText)
+const numberArray = [6, 11, 45, 8, 132, 98, 27]
 
-// RegEx: Regular Expression: olyan eszköz/módszer, amivel formátumot lehet ellenőrizni, pl. e-mail formátumnak megfelel-e a string
+const filterResult = numberArray.filter((number) => number % 2 !== 0)
 
-
-// Random szám generátor kerek szám, fix értékek között
-
-let randomNumber = Math.round(Math.random() * (100 - 1) + 1)
-
-// console.log(randomNumber)
-
-const numberInString = "145"
-
-const number = parseInt(numberInString) // stringben lévő számot számmá alakítja (csak egész szám); parseFloat tudja a tizedest is kezelni
-const float = parseFloat(numberInString)
-
-// console.log(number)
-
-// számok sorrendbe rendezése array-ban:
-
-let arr = [1, 21, 3, 444, 56, 10000]
-
-console.log(arr.sort()) // ABC sorrend
-console.log(arr.sort((a, b) => a - b)) // növekvő sorrend
-console.log(arr.sort((a, b) => b - a)) // csökkenő sorrend
-
-// Objektum methods
-
-let obj = {
-    name: "John Doe",
-    age: "32",
-    favoriteDrink: "beer"
-}
-
-let objKeys = Object.keys(obj)
-
-/* for (let i = 0; i < objKeys.length; i++) {
-    console.log(objKeys[i])
-    console.log(obj[objKeys[i]])
-} */
-
-for (const key of Object.keys(obj)) {
-    console.log(key)
-    console.log(obj[key]) // ilyenkor mindig bracket notationt kell használni
-}
+console.log(filterResult)
